@@ -3,17 +3,14 @@ namespace Jefferywork\PhpCron\Controllers;
 
 use Jefferywork\PhpCron\Libs\AlarmSystem;
 use Jefferywork\PhpCron\Libs\Jiaqi;
-use Jefferywork\PhpCron\Traits\Variables;
 
 class HeshuiController
 {
-    use Variables;
-
     private string $feishu = '';
 
     public function __construct()
     {
-        $this->feishu = self::feishuHeshui();
+        $this->feishu = getenv('FEISHU') ?? '';
     }
 
     public function index()
@@ -33,7 +30,7 @@ class HeshuiController
 
         echo '提醒喝水任务执行';
         var_dump(getenv());
-        AlarmSystem::feishu($this->feishu, $this->msg[array_rand($this->msg)]);
+        //AlarmSystem::feishu($this->feishu, $this->msg[array_rand($this->msg)]);
     }
 
     private array $msg = [

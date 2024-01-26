@@ -1,8 +1,17 @@
-name: PHP Week
+name: PHP Every Hour
+
+#on:
+#  schedule:
+#    - cron: '0 * * * *' # 每小时触发，0 分钟时执行
 
 on:
-  schedule:
-    - cron: '0 3 * * 1-5' # 每周一到周五的北京时间11点触发
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+env:
+  FEISHU: ${{ vars.FEISHUHESHUI }}
 
 jobs:
   run-php-script:
@@ -18,7 +27,7 @@ jobs:
         php-version: '8.1'
 
     - name: Validate composer.json and composer.lock
-      run: composer validate --strict
+      run: ls && composer validate --strict
 
     - name: Cache Composer packages
       id: composer-cache
@@ -32,5 +41,6 @@ jobs:
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
+    # 运行的PHP脚本路径
     - name: Run PHP script
-      run: php index.php bond # 新债申购通知
+      run: php index.php heshui # 喝水消息通知

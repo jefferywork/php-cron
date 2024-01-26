@@ -4,18 +4,16 @@ namespace Jefferywork\PhpCron\Controllers;
 
 use Jefferywork\PhpCron\Libs\AlarmSystem;
 use Jefferywork\PhpCron\Libs\Jiaqi;
-use Jefferywork\PhpCron\Traits\Variables;
 
 class BondController extends Controller
 {
-    use Variables;
 
     private string $feishu = '';
     private string $url = 'https://www.jisilu.cn/data/calendar/get_calendar_data/?qtype=CNV&start=%d&end=%d';
 
     public function __construct()
     {
-        $this->feishu = self::feishuBond();
+        $this->feishu = getenv('FEISHU') ?? '';
     }
 
     public function index()
