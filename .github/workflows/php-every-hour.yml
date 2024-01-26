@@ -15,7 +15,7 @@ jobs:
     runs-on: ubuntu-latest
 
     env:
-      FEISHUHESHUI: ${{ env.FEISHUHESHUI }}
+      FEISHUHESHUI: ${{ vars.FEISHUHESHUI }}
 
     steps:
     - name: Checkout code
