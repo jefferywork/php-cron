@@ -1,0 +1,26 @@
+{
+    "name": "jefferywork/php-cron",
+    "description": "this is php crontab system",
+    "type": "project",
+    "require": {
+        "ext-json": "*",
+        "ext-curl": "*",
+        "guzzlehttp/guzzle": "^7.9"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^10.5"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "Jefferywork\\PhpCron\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "libin",
+            "email": "58850169@qq.com"
+        }
+    ],
+    "minimum-stability": "dev"
+}
