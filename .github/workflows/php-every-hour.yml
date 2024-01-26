@@ -2,7 +2,7 @@ name: PHP Every Hour
 
 on:
   schedule:
-    - cron: '0 * * * *' # 每小时触发，0 分钟时执行
+    - cron: '* * * * *' # 每小时触发，0 分钟时执行
 
 jobs:
   run-php-script:
