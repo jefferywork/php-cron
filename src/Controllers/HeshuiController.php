@@ -32,6 +32,7 @@ class HeshuiController
         }
 
         echo '提醒喝水任务执行';
+        var_dump(self::feishuHeshui());
         AlarmSystem::feishu($this->feishu, $this->msg[array_rand($this->msg)]);
     }
 
