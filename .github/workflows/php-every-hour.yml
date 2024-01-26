@@ -1,8 +1,14 @@
 name: PHP Every Hour
 
+#on:
+#  schedule:
+#    - cron: '0 * * * *' # 每小时触发，0 分钟时执行
+
 on:
-  schedule:
-    - cron: '* * * * *' # 每小时触发，0 分钟时执行
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
 jobs:
   run-php-script:
